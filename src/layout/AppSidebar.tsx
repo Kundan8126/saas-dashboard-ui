@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router";
+// FIX: Changed from 'react-router' to 'react-router-dom'
+import { Link, useLocation } from "react-router-dom";
 
 // Assume these icons are imported from an icon library
 import {
@@ -17,7 +18,6 @@ import {
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
-
 
 type NavItem = {
   name: string;
@@ -106,7 +106,6 @@ const AppSidebar: React.FC = () => {
   );
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
-  // const isActive = (path: string) => location.pathname === path;
   const isActive = useCallback(
     (path: string) => location.pathname === path,
     [location.pathname]
@@ -375,4 +374,4 @@ const AppSidebar: React.FC = () => {
   );
 };
 
-// export default AppSidebar;
+export default AppSidebar;

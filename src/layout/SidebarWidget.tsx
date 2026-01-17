@@ -1,3 +1,5 @@
+
+// REMOVED ": JSX.Element" - TypeScript will infer it automatically now
 export default function SidebarWidget() {
   return (
     <div
